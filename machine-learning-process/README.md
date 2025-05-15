@@ -1,5 +1,10 @@
 # Installation
 
+Launch Docker Desktop, and start minikube 
+```
+minikube start
+```
+
 1- install mlflow using helm:
 ```
 helm repo add community-charts https://community-charts.github.io/helm-charts
