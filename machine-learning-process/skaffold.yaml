@@ -20,7 +20,7 @@ deploy:
         createNamespace: true
         setValues: 
           coder.serviceType: NodePort
-          coder.storageClassName: standard
+          coder.storageClassName: hostpath
           coder.coderImage: eoepca/pde-code-server:devlatest
           coder.workspace: machine-learning-process
           coder.workspaceStorage: 40Gi
@@ -29,7 +29,7 @@ deploy:
           coderResources.requests.cpu: '1'
           coderResources.requests.memory: '4294967296'
           calrissian.enabled: true
-          #calrissian.storage: 30Gi
+          calrissian.storage: 30Gi
           coder.securityContext.privileged: true
           kaniko.enabled: false
           skaffold.enabled: true
@@ -49,7 +49,7 @@ deploy:
           service.type: ClusterIP
           service.port: 5000
           ingress.enabled: true
-          ingress.className: standard
+          ingress.className: hostpath
           resources.limits.memory: 5Gi
           resources.limits.cpu: 500m
           resources.requests.cpu: 200m
