@@ -37,10 +37,11 @@ spec:
           requests:
             cpu: '1'
             memory: '1Gi'
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: {{ .Values.coder.imagePullPolicy }}
       containers:
         - name: code-server
           image: {{ .Values.coder.coderImage }}
+          imagePullPolicy: {{ .Values.coder.imagePullPolicy }}
           securityContext:
             privileged: {{ .Values.coder.securityContext.privileged }}
           command: ["/bin/bash", "-c"]
